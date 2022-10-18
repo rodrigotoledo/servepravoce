@@ -1,0 +1,28 @@
+<header class="sticky top-0 z-50 bg-white shadow-sm grid grid-cols-3 px-10">
+  <!-- left content-->
+  <div class="relative flex items-center h-20 my-auto">
+    <%= link_to "Serve pra voce", root_path, class: "text-gray-400" %>
+  </div>
+  <!-- center content -->
+
+  <div class="flex items-center border-2 rounded-full h-12 my-auto justify-between px-6">
+    <%= text_field_tag :search, "", placeholder: "Busque aqui", class: "bg-transparent outline-none w-[92%]" %>
+    <%= heroicon("magnifying-glass", variant: "solid", class: "h-8 w-8 text-white bg-blue-400 rounded-full p-2 cursor-pointer hover:scale-110 transition-all duration-150 ease-out") %>
+  </div>
+
+  <!-- right content with icons -->
+  <div class="flex items-center justify-end space-x-4">
+    <p class="text-gray-400 hidden md:inline">Comece sua doação</p>
+    <%= link_to heroicon("arrow-path", variant: "solid", class: "hidden text-gray-400 h-6 md:inline-flex cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), root_path %>
+
+    <div class="flex items-center space-x-2 border-2 rounded-full px-2">
+      <%= button_to heroicon("home", variant: "solid", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), root_path, method: :delete, alt: "profile picture", class: "h-10 rounded-full cursor-pointer" %>
+      <% if current_user %>
+        <%= button_to heroicon("arrow-right-on-rectangle", variant: "solid", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), destroy_user_session_path, method: :delete, alt: "profile picture", class: "h-10 rounded-full cursor-pointer" %>
+      <% else %>
+        <%= link_to heroicon("user-plus", variant: "solid", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), new_user_registration_path, class: "link" %>
+        <%= link_to heroicon("user-circle", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), new_user_session_path, class: "link" %>
+      <% end %>
+    </div>
+  </div>
+</header>
