@@ -3,8 +3,8 @@
   <div class="grid grid-cols-4 gap-4">
     <% @objects_to_sell.each do |object_to_sell| %>
       <div class="border-2 border-gray-200 rounded-md shadow-md flex flex-col items-center justify-center">
-        <%=image_tag Faker::Avatar.image %>
-        <h3 class=""><%=object_to_sell.title%></h3>
+        <%= image_tag object_to_sell.image_cover %>
+        <h3 class=""><%= object_to_sell.title %></h3>
       </div>
     <% end %>
   </div>

@@ -1,16 +1,16 @@
-<%= form_for :s, url: root_path, method: :get, class: 'sticky top-0 z-50' do |f| %>
+<%= form_for :s, url: root_path, method: :get, class: "sticky top-0 z-50" do |f| %>
   <header class="bg-white shadow-sm grid grid-cols-3 gap-3 px-10" data-controller="welcome">
     <!-- left content-->
     <div class="flex items-center my-auto">
       <%= link_to root_path, class: "h-20 text-gray-400 flex items-center" do %>
-        <%= image_tag('2-2-clothes-png-clipart.png', class: 'h-4/6') %>
+        <%= image_tag("2-2-clothes-png-clipart.png", class: "h-4/6") %>
         <h1 class="ml-1">Serve pra você</h1>
       <% end %>
     </div>
     <!-- center content -->
 
     <div class="flex items-center border-2 rounded-full h-12 my-auto justify-between px-6">
-      <%= f.text_field :term, placeholder: "Termo, ex.: camisa, calça, sapato", class: "bg-transparent outline-none w-[92%]", data: { action: "click->welcome#showSearchBoxFilter keyup->welcome#showSearchBoxFilter"} %>
+      <%= f.text_field :term, placeholder: "Termo, ex.: camisa, calça, sapato", class: "bg-transparent outline-none w-[92%]", data: { action: "click->welcome#showSearchBoxFilter keyup->welcome#showSearchBoxFilter" } %>
       <%= heroicon("magnifying-glass", variant: "solid", class: "h-8 w-8 text-white bg-blue-400 rounded-full p-2 cursor-pointer hover:scale-110 transition-all duration-150 ease-out") %>
     </div>
 
@@ -33,15 +33,15 @@
     <div class="col-start-2 hidden" data-welcome-target="searchBox">
       <div class="border-gray-200 border-2 w-full rounded-md mb-4 -mt-4 p-4">
           <div class="flex flow mb-4">
-            <%= f.label :color, 'Cor' %><%=f.text_field :color, class: 'h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2 w-full', placeholder: 'Ex.: azul, verde' %>
+            <%= f.label :color, "Cor" %><%= f.text_field :color, class: "h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2 w-full", placeholder: "Ex.: azul, verde" %>
           </div>
           <div class="flex flow mb-4">
-            <%= f.label :size, 'Tamanho' %><%=f.text_field :size, class: 'h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2 w-full', placeholder: 'Ex.: P, M, Grande' %>
+            <%= f.label :size, "Tamanho" %><%= f.text_field :size, class: "h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2 w-full", placeholder: "Ex.: P, M, Grande" %>
           </div>
           <div class="flex flow mb-4">
-            <%= f.label :location, 'Localização' %><%=f.text_field :location, class: 'h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2 w-full', placeholder: 'Ex.: Rua ABC, Avenida XYZ' %>
+            <%= f.label :location, "Localização" %><%= f.text_field :location, class: "h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2 w-full", placeholder: "Ex.: Rua ABC, Avenida XYZ" %>
           </div>
-          <%= f.submit 'Buscar', class: 'border-2 bg-gray-200 rounded-md p-2'%> <span class="text-gray-600 cursor-pointer" data-action="click->welcome#hideSearchBoxFilter">Cancelar</span>
+          <%= f.submit "Buscar", class: "border-2 bg-gray-200 rounded-md p-2" %> <span class="text-gray-600 cursor-pointer" data-action="click->welcome#hideSearchBoxFilter">Cancelar</span>
       </div>
     </div>
   </header>
