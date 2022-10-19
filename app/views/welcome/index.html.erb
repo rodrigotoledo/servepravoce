@@ -1,16 +1,22 @@
 <section class="pt-6">
-  <h2 class="text-4xl font-semibold pb-5 px-8 sm:px-16">O que esta perto de voce</h2>
-  <div class="grid grid-cols-4 gap-4">
+  <h2 class="text-4xl font-semibold pb-5 px-8 sm:px-16">O que está perto de você</h2>
+  <div class="grid md:grid-cols-4 md:gap-4">
     <% @objects_to_sell.each do |object_to_sell| %>
-      <div class="border-2 border-gray-200 rounded-md shadow-md flex flex-col items-center justify-center">
-        <%= image_tag object_to_sell.image_cover %>
-        <h3 class=""><%= object_to_sell.title %></h3>
+      <div class="border-2 border-gray-200 rounded-md shadow-md flex">
+        <%= image_tag object_to_sell.image_cover, class: "w-1/2" %>
+        <div class="mx-3 w-full flex md:flex-col h-full p-2">
+          <h3 class="text-gray-400 flex-auto"><%= object_to_sell.title %></h3>
+          <%= link_to "Mais detalhes", "#", class: "bg-gray-200 rounded-md w-auto text-center items-center justify-center flex text-sm p-1" %>
+        </div>
       </div>
     <% end %>
   </div>
 </section>
 
-<p>Diversidade de ofertas</p>
+<section class="pt-6">
+  <h2 class="text-4xl font-semibold pb-5 px-8 sm:px-16">Diversidade de ofertas</h2>
+</section>
+
 <div>
   <div>
     <h2>Cadastre-se</h2>
