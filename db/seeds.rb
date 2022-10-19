@@ -10,3 +10,8 @@
 require 'faker'
 User.create!(email: Faker::Internet.email, password: 'aassdd123', password_confirmation: 'aassdd123')
 User.create!(email: 'admin@test.com', password: 'aassdd123', password_confirmation: 'aassdd123')
+
+
+10.times.each do
+  ObjectToSell.create(title: Faker::Coffee.blend_name, description: Faker::Lorem.paragraph)
+end

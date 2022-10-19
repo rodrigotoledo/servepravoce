@@ -1,5 +1,5 @@
-<%= form_for :s, url: root_path, method: :get do |f| %>
-  <header class="sticky top-0 z-50 bg-white shadow-sm grid grid-cols-3 gap-3 px-10" data-controller="welcome">
+<%= form_for :s, url: root_path, method: :get, class: 'sticky top-0 z-50' do |f| %>
+  <header class="bg-white shadow-sm grid grid-cols-3 gap-3 px-10" data-controller="welcome">
     <!-- left content-->
     <div class="flex items-center my-auto">
       <%= link_to root_path, class: "h-20 text-gray-400 flex items-center" do %>
