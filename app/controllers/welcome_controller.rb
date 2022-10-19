@@ -2,6 +2,6 @@
 
 class WelcomeController < ApplicationController
   def index
-    @objects_to_sell = ObjectToSell.limit(4)
+    @objects_to_sell = ObjectToSell.limit(8)
   end
 end
