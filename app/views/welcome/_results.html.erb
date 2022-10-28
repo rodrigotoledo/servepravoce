@@ -1,0 +1,9 @@
+<% @objects_to_sell.each do |object_to_sell| %>
+  <div class="border-2 border-gray-200 rounded-md shadow-md flex">
+    <%= image_tag object_to_sell.image_cover, class: "w-1/2" %>
+    <div class="mx-3 w-full flex md:flex-col h-full p-2">
+      <h3 class="text-gray-400 flex-auto"><%= object_to_sell.title %></h3>
+      <%= link_to "Mais detalhes", "#", class: "bg-gray-200 rounded-md w-auto text-center items-center justify-center flex text-sm p-1" %>
+    </div>
+  </div>
+<% end %>

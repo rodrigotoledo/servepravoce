@@ -1,0 +1,25 @@
+<div class="sticky top-0 z-50 bg-white shadow-sm border-b">
+  <header class='flex justify-between max-w-6xl mx-5 lg:mx-auto'>
+    <div class="relative flex items-center my-auto">
+      <%= link_to root_path, class: "h-20 text-gray-400 flex items-center" do %>
+        <%= image_tag("2-2-clothes-png-clipart.png", class: "h-4/6") %>
+        <h1 class="ml-1 lg:hidde">Serve pra você</h1>
+      <% end %>
+    </div>
+
+
+    <div class="max-w-xs my-auto">
+      <%= render "components/header_form" %>
+    </div>
+
+    <div class="flex items-center justify-end space-x-4">
+      <%= link_to heroicon("home", variant: "solid", class: "h-6 hidden md:inline-flex cursor-pointer hover:scale-125 duration-150 ease-out"), root_path %>
+      <% if current_user %>
+        <%= button_to heroicon("arrow-right-on-rectangle", variant: "solid", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), destroy_user_session_path, method: :delete, alt: "profile picture", class: "h-10 rounded-full cursor-pointer", data: { turbo: "false" } %>
+      <% else %>
+        <%= link_to heroicon("user-plus", variant: "solid", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), new_user_registration_path, class: "link" %>
+        <%= link_to heroicon("user-circle", class: "h-6 text-gray-400 cursor-pointer hover:scale-125 transition-all duration-150 ease-out"), new_user_session_path, class: "link" %>
+      <% end %>
+    </div>
+  </header>
+</div>
