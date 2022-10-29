@@ -14,4 +14,12 @@ export default class extends Controller {
     term.value = ''
     search_form.requestSubmit();
   }
+
+  remakeResults(event){
+    let term = document.getElementById('term')
+    if(term.value === ''){
+      let search_form = document.getElementById('search_form')
+      search_form.requestSubmit();
+    }
+  }
 }
