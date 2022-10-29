@@ -1,7 +1,7 @@
 <section class="pt-6">
   <h2 class="text-4xl font-semibold pb-5 px-8 sm:px-16">O que está perto de você</h2>
   <div class="grid md:grid-cols-4 md:gap-4" id="results">
-    <%=render 'welcome/results' %>
+    <%= render "welcome/results" %>
   </div>
 </section>
 
@@ -9,11 +9,21 @@
   <h2 class="text-4xl font-semibold pb-5 px-8 sm:px-16">Diversidade de ofertas</h2>
 </section>
 
-<div>
-  <div>
+<section class="flex justify-between mb-10">
+  <div class="w-[32rem] border-2 border-gray-200 p-4 shadow-md ml-2">
     <h2>Cadastre-se</h2>
+    <%= form_for :user, url: root_path do |f| %>
+    <fieldset>
+      <%= f.label :email %>
+      <%= f.text_field :email, class: "h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2" %>
+    </fieldset>
+    <fieldset>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: "h-6 border-b-2 text-gray-400 border-gray-200 bg-transparent outline-none ml-2" %>
+      <% end %>
+    </fieldset>
   </div>
-  <div>
+  <div class="w-[32rem] border-2 border-gray-200 p-4 shadow-md mr-2">
     <h2>Login</h2>
   </div>
-</div>
+</section>
